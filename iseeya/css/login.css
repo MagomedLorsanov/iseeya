@@ -1,0 +1,132 @@
+/* global */
+* {
+	margin: 0;
+	padding: 0;
+	clear: both;
+	cursor: default;
+	border: none;
+	outline: none;
+	font-size: 13px;
+	list-style: none;
+	font-style: normal;
+	transition: .2s all;
+	box-sizing: border-box;
+	appearance: none;
+	font-family: sans-serif;
+	-o-appearance: none;
+	-ms-appearance: none;
+	-moz-appearance: none;
+	text-decoration: none;
+	-webkit-appearance: none;
+	tap-highlight-color: transparent;
+	-o-tap-highlight-color: transparent;
+	-ms-tap-highlight-color: transparent;
+	-moz-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: transparent;
+}
+
+*::selection {
+	color: rgb(30, 29, 26);
+	background-color: rgb(255, 253, 221);
+}
+
+*:hover {
+	transition: .2s all;
+}
+
+html {
+	overflow: -moz-scrollbars-none;
+	scroll-behavior: smooth;
+	-ms-overflow-style: none;
+	-o-scroll-behavior: smooth;
+	-ms-scroll-behavior: smooth;
+	-moz-scroll-behavior: smooth;
+	-webkit-scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+	width: 0;
+}
+
+body {
+	margin: 10px;
+	background-color: #292929;
+}
+
+.wrapper {
+	margin: 0 auto;
+}
+/* global */
+
+/* content */
+div {
+	width: 45%;
+	height: 90vh;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+form {
+	width: 100%;
+}
+
+form * {
+	width: 30%;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+}
+
+form > span {
+	color: #6b6b6b;
+	font-weight: 900;
+}
+
+form > input {
+	margin: 0 auto;
+	padding: 10px 15px;
+	color: #999999;
+	cursor: text;
+	border: 1px solid #404040;
+	text-align: center;
+	font-weight: 900;
+	border-radius: 20px;
+	background-color: #393939;
+}
+
+form > input:focus {
+	border-color: #6c676e;
+}
+
+form > input::placeholder {
+	color: #999999;
+	opacity: 0.5;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+form > input[type="text"] {
+	margin: 20px auto 0 auto;
+	cursor: text;
+}
+
+form > input[type="password"] {
+	margin: 15px auto 20px auto;
+	cursor: text;
+}
+
+form > input[type="submit"] {
+	width: 18%;
+	margin: 0 auto;
+	color: #ffffff;
+	cursor: pointer;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+form > input[type="submit"]:hover {
+	opacity: 0.7;
+}
+/* content */

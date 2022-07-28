@@ -1,0 +1,9 @@
+# установка заголовка "cors" для определённых сайтов
+<FilesMatch "./*.(php)$">
+	<IfModule mod_headers.c>
+		# список исключений ---------------------↴
+		SetEnvIf Origin "http://localhost/sites/template1/" AccessControlAllowOrigin=$0
+		Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+		Header merge Vary Origin
+	</IfModule>
+</FilesMatch>

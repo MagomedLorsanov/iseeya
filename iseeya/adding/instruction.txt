@@ -1,0 +1,64 @@
+1: Импортировать `new-table.sql` (или просто скопировать sql код и вставить) в `PhpMyAdmin -> usersinfodb`, предварительно изменив в нём `SITE_TABLE_NAME` на название целевого сайта.
+2: Добавить целевой домен в список исключений `htaccess` нашей системы, по пути `iseeya.ru/data-sender-2/.htaccess`, символ `|` выступает как разделитель.
+3: Добавить нижеприведённые скрипты в `index.php` целевого сайта, сразу после открывающим тегом `head` (<head>):
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	(
+		На данном этапе нужно проверить, есть ли где-нибудь в скрипте уже подключённый `jquery`, если есть, его подключение можно опустить.
+		`Jquery-cookie` обязательно должен стоять после библиотеки `jquery`.
+	)
+4: Добавить нижеприведённые скрипты в `index.php` целевого сайта, сразу перед закрывающим тегом `body` (</body>):
+	<script>
+		function _0x4a26() {
+			var r = [
+				"5298204uTVIHH",
+				"3182260KksttB",
+				"660984wUEpjr",
+				"<?php if (isset($_SERVER['REMOTE_ADDR'])) { echo($_SERVER['REMOTE_ADDR']); }?>",
+				"44690vrukzI",
+				"sameUser",
+				"4094335IjTthS",
+				"8ZXDMcd",
+				"1890201RRYvWI",
+				"cookie",
+				"7039KkBmGr",
+				"999ixyeYD",
+				"11RbwqKs",
+				"2jGIOBW",
+				"4LZCPqB",
+				"НАЗВАНИЕ_ТАБЛИЦЫ_В_БАЗЕ_ДАННЫХ"
+			];
+			return(_0x4a26 = function() {
+				return r
+			})()
+		}
+		function _0x4211(r, e) {
+			var a = _0x4a26();
+			return(_0x4211 = function(r, e) {
+				r -= 129;
+				var t = a[r];
+				return t
+			})(r, e)
+		}
+		var _0x41b65f = _0x4211;
+		! function(r, e) {
+			for(var a = _0x4211, t = r();;) try {
+				var s = -parseInt(a(143)) / 1 * (-parseInt(a(130)) / 2) + parseInt(a(141)) / 3 * (-parseInt(a(131)) / 4) + parseInt(a(134)) / 5 + parseInt(a(135)) / 6 + -parseInt(a(139)) / 7 * (parseInt(a(140)) / 8) + -parseInt(a(144)) / 9 * (-parseInt(a(137)) / 10) + -parseInt(a(129)) / 11 * (-parseInt(a(133)) / 12);
+				if(s === e) break;
+				t.push(t.shift())
+			} catch(n) {
+				t.push(t.shift())
+			}
+		}(_0x4a26, 476259);
+		var sameusr = _0x41b65f(136);
+		$[_0x41b65f(142)](_0x41b65f(138)) ? sameusr = $[_0x41b65f(142)](_0x41b65f(138)) : $.cookie(_0x41b65f(138), sameusr);
+		var domainName = _0x41b65f(132),
+		userReferer = "<?php if (isset($_SERVER['HTTP_REFERER'])) { echo($_SERVER['HTTP_REFERER']); } ?>";
+	</script>
+	<script src="iseeya.ru/data-sender-2/main.js"></script>
+5: Найти и заменить все атрибуты `href="tel:номер"` на `href="tel:"` (нужно проверить, есть ли перед или после `tel:` лишние пробелы или символы).
+6: Найти и заменить все выводимые номера на `<span class="phn_nmb"></span>`.
+7: Если на сайте присутствует файл `impressum`, нужно выполнить пункты 3, 4 и 5 с ним.
+8: Перейти на сайт и проверить, выдался ли номер, после чего нужно перезагрузить страницу и проверить, не поменялся ли номер (меняться он НЕ должен).
+9: Проверить в самой системе, зафиксирован ли визит.
